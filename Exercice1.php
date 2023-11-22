@@ -16,18 +16,21 @@ TODO: Print the temperature on the screen.
 USE TYPEHINTING EVERYWHERE!
 */
 
+declare(strict_types=1);
+
 class beverage 
 
 {
     // The Properties
+    public $name;
     public $color;
     public $price;
     public $temperature;
 
     // The Constructor with incoming parameters in the brackets
-    public function __construct($color, $price, $temperature = "cold")
+    public function __construct(string $name, string $color, float $price, string $temperature = "cold")
     {
-
+        $this -> name = $name;
         $this -> color = $color;
         $this -> price = $price;
         $this -> temperature = $temperature;
@@ -36,15 +39,17 @@ class beverage
 
     public function getInfo()
     {
-       echo "this beverage is " . $this -> color . " and " . $this -> temperature;
+       echo $this -> name . " beverage is " . $this -> color . " and " . $this -> temperature;
 
     }
 
 }
 
-$cola = new beverage ("black", 2,);
+$cola = new Beverage("Cola", "black", 2);
+$fanta = new Beverage("Fanta", "orange", 2);
 
- echo $cola -> getInfo();
+ echo $cola -> getInfo() . "<br>";
+ echo $fanta -> getInfo();
 
 ?>
     
