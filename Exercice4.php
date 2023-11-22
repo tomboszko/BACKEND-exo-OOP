@@ -69,20 +69,21 @@ class Beer extends Beverage
         $this->alcoholPercentage = $alcoholPercentage;
     }
 
-    // Getter method for alcoholPercentage
-    public function getAlcoholPercentage(): float
-    {
-        return $this->alcoholPercentage;
-    }
+   // Getter method for alcoholPercentage
+   public function getAlcoholPercentage(): float
+   {
+       return $this->alcoholPercentage;
+   }
 
-    public function getBeerInfo(): string
-    {
-        return $this->getName() . " beverage has " . $this->getAlcoholPercentage() . "% of alcohol";
-    }
-    public function beerInfo(): string
-    {
-        return "Hi i'm " . $this->getName() . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
-    }
+   public function getBeerInfo(): string
+   {
+       return $this->name . " beverage has " . $this->alcoholPercentage . "% of alcohol";
+   }
+
+   public function beerInfo(): string
+   {
+       return "Hi i'm " . $this->name . " and have an alcohol percentage of " . $this->alcoholPercentage . " and I have a " . $this->color . " color.";
+   }
 }
 
 $Duvel = new Beer("Duvel","blond", 3.50, 8.5, "cold");
